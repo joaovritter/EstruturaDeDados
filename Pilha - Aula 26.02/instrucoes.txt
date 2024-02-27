@@ -1,0 +1,11 @@
+1) refatore o de sua preferencia para gerar n numeros aleatorios. 
+contudo, todo numero par deve ser inserido 
+na pilha, todo o numero impar gerado deve remover um par do topo
+
+
+2) crie um arquivo texto com n numeros aleatorios, um abaixo do outro. 
+faca um programa que leia o arquivo e 
+insira os numeros em uma pilha. ao final, o programa 
+deve mostrar o elemento no topo e o tamanho da pilha
+
+
