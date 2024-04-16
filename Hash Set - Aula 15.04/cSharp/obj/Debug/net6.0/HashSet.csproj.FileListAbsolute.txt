@@ -1,0 +1,5 @@
+C:\Users\laboratorio\source\repos\HashSet\HashSet\obj\Debug\net6.0\HashSet.csproj.AssemblyReference.cache
+C:\Users\laboratorio\source\repos\HashSet\HashSet\obj\Debug\net6.0\HashSet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\laboratorio\source\repos\HashSet\HashSet\obj\Debug\net6.0\HashSet.AssemblyInfoInputs.cache
+C:\Users\laboratorio\source\repos\HashSet\HashSet\obj\Debug\net6.0\HashSet.AssemblyInfo.cs
+C:\Users\laboratorio\source\repos\HashSet\HashSet\obj\Debug\net6.0\HashSet.csproj.CoreCompileInputs.cache
