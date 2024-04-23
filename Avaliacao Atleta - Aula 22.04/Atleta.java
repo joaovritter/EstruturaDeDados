@@ -1,4 +1,4 @@
-package Atividade;
+package Avaliacao;
 
 import java.util.Objects;
 
@@ -22,12 +22,11 @@ public class Atleta {
 		
 	}
 	
-
 	
 	@Override
 	public String toString() {
-		return "Atleta [nome=" + nome + ", apelido=" + apelido + ", fone=" + fone + ", dataNascimento=" + dataNascimento
-				+ ", pontuacao=" + pontuacao + "]";
+		return "Atleta: "+ nome + ", Apelido: " + apelido + ", Fone: " + fone + ", Data de nascimento: " + dataNascimento
+				+ ", Pontuacao: " + pontuacao;
 	}
 
 	@Override
