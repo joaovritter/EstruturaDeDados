@@ -1,4 +1,4 @@
-package Atividade;
+package Avaliacao;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -11,18 +11,18 @@ public class Principal {
 	public static void listarNomes (ArrayList<Atleta> lista) {
 		if (!lista.isEmpty()) {
 		lista.sort((a1, a2)->((String)a1.getNome()).compareTo(a2.getNome()));
-		for (Atleta item : lista){
-			System.out.println(item);
+			for (Atleta item : lista){
+				System.out.println(item);
+			}
 		}
-	}
 		else {
 			System.out.println("Nenhum atleta cadastrado!");
 		}
-}
+	}
 	
 	public static void listarPontuacao (ArrayList<Atleta> lista) {
 		if (!lista.isEmpty()) {
-			lista.sort((a2, a1)->((String)a2.getPontuacao()).compareTo(a1.getPontuacao()));
+			lista.sort((a2, a1)->((String)a1.getPontuacao()).compareTo(a2.getPontuacao()));
 			for (Atleta pontos : lista){
 				System.out.println(pontos);	
 			}
@@ -41,28 +41,52 @@ public class Principal {
 	
 	}
 	
-	
-	public static void procurarNome (HashSet<Atleta> hashAtleta, String procuraNome, Atleta jogador) {
-		if (jogador.getNome().equals(procuraNome)) {
-			System.out.println(procuraNome +" Encontrado! ");
+	public static void procurarNome (HashSet<Atleta> hashAtleta, String procuraNome) {
+		    boolean encontrado = false;
+		    for (Atleta jogador : hashAtleta) {
+		        if (jogador.getNome().equals(procuraNome)) {
+		            encontrado = true;
+		            System.out.println(procuraNome + " encontrado!");
+		            break; // Se encontrou, não precisa continuar procurando
+		        }
+		    }
+		    if (!encontrado) {
+		        System.out.println("Atleta não encontrado.");
+		    }
 		}
-	}
+
+	
+	public static void procurarApelido (HashSet<Atleta> hashAtleta, String procuraApelido) {
+		 boolean encontrado = false;
+		    for (Atleta jogador : hashAtleta) {
+		        if (jogador.getApelido().equals(procuraApelido)) {
+		            encontrado = true;
+		            System.out.println(procuraApelido + " encontrado!");
+		            break; // Se encontrou, não precisa continuar procurando
+		        }
+		    }
+		    	if (!encontrado) {
+		        System.out.println("Atleta não encontrado.");
+		    }
+		}
+
 	
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner (System.in);
-		int op;
-		int opInterna;
 		HashSet<Atleta> hashAtleta = new HashSet<Atleta>();
 		ArrayList<Atleta> lista = new ArrayList<Atleta>();
 		Atleta jogador = new Atleta();
+		
+		int op;
+		int opInterna;
 		String nome, apelido, fone, dataNascimento, pontuacao;
-		String procuraNome;
+		String procuraNome, procuraApelido;
 		do {
-			System.out.println("Digite uma opcao de acordo com o menu: ");
+			System.out.println("\nDigite uma opcao de acordo com o menu: \n");
 			System.out.println("1- Listar Atleta (Nome ou pontuacao)");
 			System.out.println("2- Cadastrar Atleta");
 			System.out.println("3- Procurar Atleta (nome ou apelido)");
-			System.out.println("4- Remover atleta (nome ou apelido)");
+			System.out.println("4- Remover atleta (nome ou apelido)\n");
 			op = teclado.nextInt();
 			teclado.nextLine();
 			
@@ -101,18 +125,20 @@ public class Principal {
 				
 				
 			case 3:
-				System.out.println("Quer ver por 1- Nome ou 2- Apelido? ");
+				System.out.println("Quer procurar por 1- Nome ou 2- Apelido? ");
 				opInterna = teclado.nextInt();
 				teclado.nextLine();
 				
 				if (opInterna==1) {
-					System.out.println("Digite o nome a ser procurado: ");
+					System.out.println("Digite o Nome a ser procurado: ");
 					procuraNome = teclado.nextLine();
+					procurarNome (hashAtleta, procuraNome);
 				}
 				
-				if (opInterna==1) {
-					System.out.println("Digite o nome a ser procurado: ");
-					procuraNome = teclado.nextLine();
+				if (opInterna==2) {
+					System.out.println("Digite o Apelido a ser procurado: ");
+					procuraApelido = teclado.nextLine();
+					procurarApelido (hashAtleta, procuraApelido);
 				}
 				
 				break;
