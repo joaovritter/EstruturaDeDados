@@ -41,12 +41,12 @@ public class Principal {
 	
 	}
 	
-	public static void procurarNome (HashSet<Atleta> hashAtleta, String procuraNome) {
+	public static void procurarNome (HashSet<Atleta> hashAtleta, String nome) {
 		    boolean encontrado = false;
 		    for (Atleta jogador : hashAtleta) {
-		        if (jogador.getNome().equals(procuraNome)) {
+		        if (jogador.getNome().equals(nome)) {
 		            encontrado = true;
-		            System.out.println(procuraNome + " encontrado!");
+		            System.out.println(nome + " encontrado!");
 		            break; // Se encontrou, não precisa continuar procurando
 		        }
 		    }
@@ -56,12 +56,12 @@ public class Principal {
 		}
 
 	
-	public static void procurarApelido (HashSet<Atleta> hashAtleta, String procuraApelido) {
+	public static void procurarApelido (HashSet<Atleta> hashAtleta, String Apelido) {
 		 boolean encontrado = false;
 		    for (Atleta jogador : hashAtleta) {
-		        if (jogador.getApelido().equals(procuraApelido)) {
+		        if (jogador.getApelido().equals(Apelido)) {
 		            encontrado = true;
-		            System.out.println(procuraApelido + " encontrado!");
+		            System.out.println(Apelido + " encontrado!");
 		            break; // Se encontrou, não precisa continuar procurando
 		        }
 		    }
