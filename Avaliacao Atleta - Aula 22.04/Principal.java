@@ -16,7 +16,7 @@ public class Principal {
 			}
 		}
 		else {
-			System.out.println("Nenhum atleta cadastrado!");
+			System.out.println("Nenhum atleta cadastrado");
 		}
 	}
 	
@@ -69,8 +69,39 @@ public class Principal {
 		        System.out.println("Atleta não encontrado.");
 		    }
 		}
-
 	
+	public static void removerNome (HashSet<Atleta> hashAtleta, String nome) {
+		boolean removido = false;
+		for (Atleta jogador : hashAtleta) {
+				if (jogador.getNome().equals(nome)) {
+					hashAtleta.remove(jogador);
+					removido = true;
+					System.out.println("Atleta removido: "+jogador);
+					break;
+				}
+				if (!removido) {
+					System.out.println("Atleta não encontrado.");
+				}
+			}
+		}
+	
+	public static void removerApelido (HashSet<Atleta> hashAtleta, String apelido) {
+		boolean removido = false;
+		for (Atleta jogador : hashAtleta) {
+			if (jogador.getApelido().equals(apelido)) {
+				hashAtleta.remove(jogador);
+				removido = true;
+				System.out.println("Atleta removido: "+jogador);
+				break;
+			}
+			if (!removido) {
+				System.out.println("Atleta nao encontrado!");
+			}
+		}
+		
+	}
+
+
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner (System.in);
 		HashSet<Atleta> hashAtleta = new HashSet<Atleta>();
@@ -80,7 +111,7 @@ public class Principal {
 		int op;
 		int opInterna;
 		String nome, apelido, fone, dataNascimento, pontuacao;
-		String procuraNome, procuraApelido;
+		String procuraNome, procuraApelido, removeNome, removeApelido;
 		do {
 			System.out.println("\nDigite uma opcao de acordo com o menu: \n");
 			System.out.println("1- Listar Atleta (Nome ou pontuacao)");
@@ -144,7 +175,21 @@ public class Principal {
 				break;
 				
 			case 4:
-				System.out.println("Encerrando programa...");		
+				System.out.println("Quer remover por 1- Nome ou 2- Apelido? ");
+				opInterna = teclado.nextInt();
+				teclado.nextLine();
+				
+				if (opInterna==1) {
+					System.out.println("Digite o Nome a ser removido: ");
+					removeNome = teclado.nextLine();
+					removerNome (hashAtleta, removeNome);
+				}
+				
+				if (opInterna==2) {
+					System.out.println("Digite o Apelido a ser removido: ");
+					removeApelido = teclado.nextLine();
+					removerApelido (hashAtleta, removeApelido);
+				}
 				break;
 				
 			default: 
