@@ -193,7 +193,27 @@ Arvore *remove (int valor, Arvore *raiz){
         return NULL;
     }
 }
-Arvore *podar (){
-    
+Arvore *podar (Arvore *raiz){
+    if (raiz){
+        if (!raiz->esq && !raiz->dir){
+            free(raiz);
+            return NULL;
+        }
+        raiz->esq = podar (raiz->esq);
+        raiz->dir = podar (raiz->dir);
+        return raiz;
+    }
+    return NULL;
 }
 //calcular altura da arvore
+
+int altura (Arvore *raiz){
+    if (raiz){
+        int altEsq = altura (raiz->esq);
+        int altDir = altura (raiz->dir);
+        if (altEsq > altDir){ 
+            return 1 + altEsq;
+        }
+        return 1 + altDir;
+    }
+}
