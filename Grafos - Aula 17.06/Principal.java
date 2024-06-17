@@ -99,7 +99,7 @@ public class Principal {
 
         grafo_rs.show();
 
-        String cidade = "Itaara";
+        String cidade = "Santa Maria";
         System.out.println("Grau da cidade de " + cidade + ": " + grafo_rs.mostrarGrau(cidade));
     }
 }
