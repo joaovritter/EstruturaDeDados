@@ -10,7 +10,7 @@ class Grafo {
 
     public Grafo(ArrayList<String> vertices) {
         this.vertices = new ArrayList<>(); //lista das cidades
-        this.vertices.addAll(vertices); //adiciona todas cidades
+        this.vertices.addAll(vertices); //adiciona todas cidades, faz uma copia 
         this.qtdVertices = vertices.size();//qnd chama qtd vertices vai mostrar size
         this.qtdArestas = 0; //inicia em 0 e dps no inserirArestaSimetrica vai aumentando
         this.matrizAdjacencia = new int[this.qtdVertices][this.qtdVertices]; //matriz quadrada das cidades
